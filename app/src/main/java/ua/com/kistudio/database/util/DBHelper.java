@@ -17,11 +17,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+TABLE_NAME+" (id integer primary key autoincrement, name text, price integer);");
+        db.execSQL("create table "+TABLE_NAME+" (_id integer primary key autoincrement, name text, price integer);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("create table "+TABLE_NAME+" (_id integer primary key autoincrement, name text, price integer);");
     }
 }
